@@ -24,6 +24,13 @@ function isPalindrome(string) {
   return result
 }
 
-function addUpTo(array) {
-  
+function addUpTo(array, idx) {
+  if (idx === 0) {
+    return array[0]
+  } else {
+    let currentNum = array[0]
+    let newIdx = idx - 1
+    let newArray = array.slice(1)
+    return currentNum + addUpTo(newArray, newIdx)
+  }
 }
