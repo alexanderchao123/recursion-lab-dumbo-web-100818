@@ -11,5 +11,19 @@ function reverseString(string) {
 }
 
 function isPalindrome(string) {
+  let result
+  let firstChar = string.slice(0, 1)
+  let lastChar = string.slice(-1)
+  if (string.length === 1 || (string.length === 2 && firstChar === lastChar)) {
+    result = true
+  } else if (firstChar === lastChar) {
+    result = isPalindrome(string.slice(1, -1))
+  } else {
+    result = false
+  }
+  return result
+}
+
+function addUpTo(array) {
   
 }
